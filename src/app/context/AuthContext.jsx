@@ -1,47 +1,42 @@
-import { useState, useEffect, createContext, useContext } from "react";
-import Firebase from "../../utils/firebase"
+'use client'
+import { auth } from "@/utils/firebase";
+import { onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+export const AuthContext = createContext()
 
-const formatAuthUser = (user) => ({
-    uid: user.uid,
-    email: user.email
-})
+export function AuthProvider ({ children }) {
+    auth.useDeviceLanguage()
+    const googleSignIn = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+    }
+    const googleSignOut = () => {
+        signOut(auth)
+    }
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-export default function useFirebaseAuth() {
-    const [authUser, setAuthUser] = useState(null)
-    const [loading, setLoading] = useState(true)
-
-    const authStateChanged = async (authState) => {
-        if (!authState) {
-            setAuthUser(null)
-            setLoading(false)
-            return;
-        }
-
+    function setAuth(user) {
         setLoading(true)
-        let fromattedUser = formatAuthUser(authState)
-        setAuthUser(fromattedUser)
-        setLoading(false)
+        if(!user){
+            setUser(null)
+            setLoading(false)
+        }else{
+            setUser(user)
+            setLoading(false)
+        }
     }
 
     useEffect(() => {
-        const unsubscribe = Firebase.auth().onAuthStateChanged(authStateChanged)
+        const unsubscribe = onAuthStateChanged(auth, (_user) => {
+            setAuth(_user)
+        })
         return () => unsubscribe()
-    }, [])
-
-    return {
-        authUser,
-        loading
-    }
+    }, [user])
+    
+    return (
+        <AuthContext.Provider value={{ user, loading, googleSignIn, googleSignOut }}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
-
-const AuthUserContext = createContext({
-    authUser: null,
-    loading: true
-})
-
-export function AuthUserProvider({ children }) {
-    const auth = useFirebaseAuth()
-    return <AuthUserContext.Provider value={auth}>{children}</AuthUserContext.Provider>
-}
-
-export const useAuth = () => useContext(AuthUserContext)
