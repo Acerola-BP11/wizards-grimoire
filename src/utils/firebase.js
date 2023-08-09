@@ -13,8 +13,8 @@ const firebaseConfig = {
   projectId: "o-grimorio-do-mago",
   storageBucket: "o-grimorio-do-mago.appspot.com",
   messagingSenderId: "851492208878",
-  appId: "1:851492208878:web:5d69b5eae26f9cf852b3ff",
-  measurementId: "G-CB25C31KDF"
+  appId: "1:851492208878:web:9a122704b4fa231552b3ff",
+  measurementId: "G-HL1S0WS8BB"
 };
 
 export const app = initializeApp(firebaseConfig)
