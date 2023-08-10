@@ -6,15 +6,8 @@ export const AuthContext = createContext()
 
 export function AuthProvider ({ children }) {
     auth.useDeviceLanguage()
-    const googleSignIn = () => {
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-    }
-    const googleSignOut = () => {
-        signOut(auth)
-    }
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     function setAuth(user) {
         setLoading(true)
@@ -22,7 +15,7 @@ export function AuthProvider ({ children }) {
             setUser(null)
             setLoading(false)
         }else{
-            setUser(user)
+            console.log(user)
             setLoading(false)
         }
     }
@@ -32,10 +25,10 @@ export function AuthProvider ({ children }) {
             setAuth(_user)
         })
         return () => unsubscribe()
-    }, [user])
+    }, [])
     
     return (
-        <AuthContext.Provider value={{ user, loading, googleSignIn, googleSignOut }}>
+        <AuthContext.Provider value={{ user, loading }}>
             {children}
         </AuthContext.Provider>
     )
