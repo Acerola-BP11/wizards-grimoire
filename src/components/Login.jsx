@@ -18,11 +18,11 @@ export default function Login() {
             />
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, facilis! Vero nihil sit saepe necessitatibus quaerat dolore laborum velit veniam incidunt vitae alias rerum, recusandae quis sint ex aut veritatis.</p>
         {!loading && (
-            !user ? (
+            !user? (
                 <GoogleSignIn/>
             ) : (
                 <>
-                    <h1 className="py-3 my-6 text-violet-600">Bem Vindo {user.displayName}</h1>
+                    <h1 className="py-3 my-6 text-violet-600">Bem Vindo {user.username}</h1>
                     <GoogleSignOut/>
                 </>
             ) 
