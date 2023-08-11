@@ -1,30 +1,19 @@
-'use client'
 import { AuthContext } from "@/app/context/AuthContext";
 import { auth } from "@/utils/firebase";
-import axios from "axios";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import { useContext } from "react";
 
 export default function GoogleSignIn() {
-    const { user, loading } = useContext(AuthContext)
+    const { _user, _loading, setUser, setLoading } = useContext(AuthContext)
     const googleSignIn = async () => {
+        setLoading(true)
         const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider)
-        const user = result.user
-        const token = await user.getIdToken()
-        const username = user.displayName
-        const email = user.email
-        await axios.post('http://localhost:3500/users/verifyUser', {
-            userToken: token,
-            email: email,
-            username: username
-        },  {
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        await signInWithPopup(auth, provider)
+        .catch(error => {
+            setLoading(false)
+            alert('Ocorreu um erro ao realizar Login, tente novamente')
         })
-            
     }
 
     return (

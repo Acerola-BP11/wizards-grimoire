@@ -2,8 +2,9 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 
+import axios from "axios";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { beforeAuthStateChanged, getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -20,3 +21,35 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig)
 export const database = getFirestore(app)
 export const auth = getAuth(app)
+
+beforeAuthStateChanged(auth, async (user) => {
+  let state
+  if(user){
+    console.log(user)
+    const token = await user.getIdToken()
+    const username = user.displayName
+    const email = user.email
+    let response
+    await axios.post('http://localhost:3500/users/verifyUser', {
+        userToken: token,
+        email: email,
+        username: username
+    },  {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(data => {
+        response = data
+    })
+    .catch(() => {
+        state = 'Erro'
+    })
+    if(response.validated === false){
+        state = 'Erro'
+    }
+  }
+  if(state === 'Erro'){
+      throw 'O Login falhou, tente novamente'
+  }
+})

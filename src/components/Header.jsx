@@ -15,7 +15,7 @@ export default function Header () {
             </Link>
             <ul className="flex flex-row ml-[135px]">
                 <li className="mx-5 hover:text-blue-500 hover:border-b hover:border-blue-500 text-white">
-                    <Link href={"https://www.google.com"}>Elemento 1</Link>
+                    <Link href={"/campaigns"}>Campanhas</Link>
                 </li>
                 <li className="mx-5 hover:text-blue-500 hover:border-b hover:border-blue-500 text-white">
                     <Link href={"google.com"}>Elemento 2</Link>
