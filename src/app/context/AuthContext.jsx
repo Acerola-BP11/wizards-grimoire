@@ -14,7 +14,8 @@ export function AuthProvider ({ children }) {
                 const formattedUser = {
                     uid: auth.uid,
                     username: auth.displayName,
-                    email: auth.email
+                    email: auth.email,
+                    avatar: auth.photoURL
                 }
             setUser(formattedUser)
             setLoading(false)

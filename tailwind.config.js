@@ -16,7 +16,9 @@ module.exports = {
       },
       colors: {
         'anti-flash-white': '#F8F8FF',
-        'custom-blue': '#191970'
+        'custom-blue': '#191970',
+        'custom-dark-blue': '#010B13',
+        'hover-blue': '#021729'
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
