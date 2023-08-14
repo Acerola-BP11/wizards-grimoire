@@ -18,7 +18,7 @@ export default function GoogleSignIn() {
 
     return (
         <button 
-            className="flex flex-row items-center justify-between w-full max-w-[180px] bg-violet-950 text-white py-2 px-3 my-10 rounded-md hover:opacity-[0.85]"
+            className="flex flex-row items-center justify-between w-full max-w-[180px] bg-[#191970] text-white py-2 px-3 my-10 rounded-md hover:opacity-[0.85] font-semibold"
             onClick={googleSignIn}
             >
             <Image

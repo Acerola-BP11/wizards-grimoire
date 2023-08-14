@@ -7,10 +7,10 @@ export default function GoogleSignOut() {
     }
     return (
         <button 
-                className="flex flex-row items-center justify-center w-full max-w-[180px] bg-violet-950 text-white py-2 px-3 my-5 rounded-md hover:opacity-[0.85]"
+                className="flex flex-row items-center justify-center w-full max-w-[180px] bg-custom-blue text-white py-2 px-3 my-5 rounded-md hover:opacity-[0.85] font-semibold"
                 onClick={googleSignOut}
                 >
                 Deslogar
         </button>
     )
-}
+}   

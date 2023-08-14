@@ -16,13 +16,13 @@ export default function Login() {
             height={200}
             className="mx-10"
             />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, facilis! Vero nihil sit saepe necessitatibus quaerat dolore laborum velit veniam incidunt vitae alias rerum, recusandae quis sint ex aut veritatis.</p>
+        <p className="font-sans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, facilis! Vero nihil sit saepe necessitatibus quaerat dolore laborum velit veniam incidunt vitae alias rerum, recusandae quis sint ex aut veritatis.</p>
         {!loading && (
             !user? (
                 <GoogleSignIn/>
             ) : (
                 <>
-                    <h1 className="py-3 my-6 text-violet-600">Bem Vindo {user.username}</h1>
+                    <h1 className="py-3 my-6 text-[#BCBCF0] font-semibold">Bem Vindo {user.username}</h1>
                     <GoogleSignOut/>
                 </>
             ) 
