@@ -4,7 +4,10 @@ import ResponsiveGrid from "@/components/ResponsiveGrid";
 
 export default function Agentes() {
     return (
-        <ResponsiveGrid gridHeader={'Agentes 4/10'}>
+        <ResponsiveGrid
+            gridHeader={'Agentes 4/10'}
+            buttonText={'Novo Agente'}
+        >
             <Card
                 agentName={'Jean Landau'}
             />

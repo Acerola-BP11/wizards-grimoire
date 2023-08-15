@@ -9,13 +9,14 @@ export function AuthProvider ({ children }) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(auth => {
+        const unsubscribe = auth.onAuthStateChanged(async auth => {
             if(auth){
                 const formattedUser = {
                     uid: auth.uid,
                     username: auth.displayName,
                     email: auth.email,
-                    avatar: auth.photoURL
+                    avatar: auth.photoURL,
+                    token: await auth.getIdToken()
                 }
             setUser(formattedUser)
             setLoading(false)

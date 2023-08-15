@@ -8,7 +8,7 @@ import {
 import { Avatar, Box, Divider } from '@mui/material'
 import { AuthContext } from '@/app/context/AuthContext'
 
-export default function Example() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { user, loading } = useContext(AuthContext)
 

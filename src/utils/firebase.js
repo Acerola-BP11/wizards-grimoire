@@ -25,7 +25,6 @@ export const auth = getAuth(app)
 beforeAuthStateChanged(auth, async (user) => {
   let state
   if(user){
-    console.log(user)
     const token = await user.getIdToken()
     const username = user.displayName
     const email = user.email
