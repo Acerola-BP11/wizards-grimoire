@@ -23,11 +23,6 @@ export default function ImageInput(){
                 style={{ display: 'none' }}
                 onChange={e => setSelectedImage(e.target.files[0])}
             />
-            {imageUrl && selectedImage && (
-                <Box mt={2} textAlign={"center"} className='overflow-hidden'>
-                    <img src={imageUrl} alt={selectedImage.name} height={300} width={300} />
-                </Box>
-            )}
             <label htmlFor="select-image">
               <Button variant="text" component='a' className="bg-transparent">
                 <Image src={imageUrl?imageUrl:'/images/avatar.jpg'} width={300} height={300}/>
