@@ -2,7 +2,7 @@
 
 import { ImageContext } from "@/app/context/ImageContext";
 import { Button } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 export default function ImageInput({ width = 300, height = 300 }){
     

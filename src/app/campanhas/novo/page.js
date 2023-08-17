@@ -1,7 +1,7 @@
 'use client'
 
 import { Grid, Paper, ThemeProvider, createTheme } from "@mui/material";
-import { ImageContext } from "@/app/context/ImageContext";
+import ImageProvider, { ImageContext } from "@/app/context/ImageContext";
 import CampaignForm from "@/components/Campaign/CampaignForm";
 
 const theme = createTheme({
@@ -28,9 +28,9 @@ export default function CreateCampaign(){
                     <Paper className="bg-black lg:w-1/2 sm:w-full sm:m-5 flex flex-col justify-between border-solid border-2 border-custom-blue">
                         <ThemeProvider theme={theme}>
                             <div>
-                                {/* <ImageContext>
+                                <ImageProvider>
                                     <CampaignForm/>
-                                </ImageContext> */}
+                                </ImageProvider>
                             </div>
                         </ThemeProvider>
                     </Paper>

@@ -2,12 +2,12 @@
 
 import { createContext, useEffect, useState } from "react"
 
-export const ImageContext = createContext()
+export const ImageContext = createContext(null)
 
 export default function ImageProvider({ children }) {
     
-    const [selectedImage, setSelectedImage] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
+    const [selectedImage, setSelectedImage] = useState(null) 
+    const [imageUrl, setImageUrl] = useState(null)
 
     useEffect(() => {
         if(selectedImage) {
