@@ -55,7 +55,7 @@ export default function CreateCampaign(){
                                 </Box>
                                 <Box className='h-64 w-full overflow-hidden'>
                                     <CustomEditor
-                                    register={register}
+                                        register={register}
                                     />
                                 </Box>
                         </ImageProvider>

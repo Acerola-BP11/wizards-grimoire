@@ -1,10 +1,11 @@
 import { Editor } from "@tinymce/tinymce-react";
 import React, { useRef } from "react";
 
-export default function CustomEditor() {
+export default function CustomEditor({register}) {
   const editorRef = useRef(null);
   return (
     <Editor
+      {...register('campaignDescription')}
       tinymceScriptSrc={"/tinymce/tinymce.min.js"}
       onInit={(evt, editor) => (editorRef.current = editor)}
       init={{
