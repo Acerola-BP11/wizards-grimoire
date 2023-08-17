@@ -1,11 +1,13 @@
 import { Editor } from "@tinymce/tinymce-react";
 import React, { useRef } from "react";
 
-export default function CustomEditor({register}) {
+export default function CustomEditor({field}) {
   const editorRef = useRef(null);
+
+  const {onChange, ...newField} = field
+
   return (
     <Editor
-      {...register('campaignDescription')}
       tinymceScriptSrc={"/tinymce/tinymce.min.js"}
       onInit={(evt, editor) => (editorRef.current = editor)}
       init={{
@@ -21,6 +23,10 @@ export default function CustomEditor({register}) {
         content_css: 'dark',
         skin: 'oxide-dark',
         placeholder: 'Insira aqui a descrição da campanha.',
+      }}
+      {...newField}
+      onEditorChange={(newValue) => {
+        onChange(newValue)
       }}
     />
   );

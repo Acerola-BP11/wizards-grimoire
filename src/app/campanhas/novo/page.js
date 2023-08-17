@@ -4,7 +4,7 @@ import { Box, Button, Paper, TextField, ThemeProvider, createTheme } from "@mui/
 import ImageProvider from "@/app/context/ImageContext";
 import ImageInput from "@/components/ImageInput";
 import dynamic from "next/dynamic"
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 const CustomEditor = dynamic(() => import('@/components/CustomEditor'),
 {
     ssr: false
@@ -54,8 +54,11 @@ export default function CreateCampaign(){
                                         />
                                     </Box>
                                     <Box className='h-64 w-full overflow-hidden'>
-                                        <CustomEditor
-                                            register={register}
+                                        <Controller
+                                            name="campaignDescription"
+                                            control={control}
+                                            defaultValue={''}
+                                            render={({field}) => <CustomEditor field={field} /> }
                                         />
                                     </Box>
                             </ImageProvider>
