@@ -45,22 +45,22 @@ figure figcaption {
   text-align: center;
 }
 hr {
-  border-color: #191970;
+  border-color: #6d737b;
   border-style: solid;
   border-width: 1px 0 0 0;
 }
 code {
-  background-color: #191970;
+  background-color: #6d737b;
   border-radius: 3px;
   padding: 0.1rem 0.2rem;
 }
 .mce-content-body:not([dir=rtl]) blockquote {
-  border-left: 2px solid #191970;
+  border-left: 2px solid #6d737b;
   margin-left: 1.5rem;
   padding-left: 1rem;
 }
 .mce-content-body[dir=rtl] blockquote {
-  border-right: 2px solid #191970;
+  border-right: 2px solid #6d737b;
   margin-right: 1.5rem;
   padding-right: 1rem;
 }
