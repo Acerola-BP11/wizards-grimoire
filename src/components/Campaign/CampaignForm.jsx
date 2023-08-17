@@ -3,15 +3,25 @@
 import { ImageContext } from "@/app/context/ImageContext"
 import { useContext } from "react"
 import ImageInput from "../ImageInput"
-import { Box, TextField } from "@mui/material"
-import { CustomEditor } from "../CustomEditor"
+import { Box, Button, TextField } from "@mui/material"
+import dynamic from "next/dynamic"
+import { Controller } from "react-hook-form"
+const CustomEditor = dynamic(() => import('@/components/CustomEditor'),
+{
+    ssr: false
+}
+)
 
 export default function CampaignForm() {
 
     const {selectedImage, imageUrl, setSelectedImage, setImageUrl} = useContext(ImageContext)
 
+    function funcao(){
+        console.log('teste')
+    }
+
     return (
-        <form action={''}>
+        <form onSubmit={funcao()}>
             <Box className='flex flex-row justify-between items-end h-full w-full'>
                 <ImageInput/>
                 <TextField
@@ -26,7 +36,14 @@ export default function CampaignForm() {
                     fullWidth
                 />
             </Box>
-            <CustomEditor/>
+            <Box className='h-64 w-full overflow-hidden'>
+                <Controller>
+                    <CustomEditor/>
+                </Controller>
+            </Box>
+            <Button type="submit" variant="contained">
+                Maravilhas do lar
+            </Button>
         </form>
     )
 }
