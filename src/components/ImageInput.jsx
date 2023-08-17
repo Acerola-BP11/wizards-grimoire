@@ -3,9 +3,10 @@
 import { ImageContext } from "@/app/context/ImageContext";
 import { Button } from "@mui/material";
 import { useContext } from "react";
+import { useFormContext } from "react-hook-form";
 
-export default function ImageInput({ register }) {
-    
+export default function ImageInput( { register } ) {
+
     const { selectedImage, imageUrl, setSelectedImage, setImageUrl } = useContext(ImageContext);
 
     return (
@@ -15,7 +16,11 @@ export default function ImageInput({ register }) {
                 type="file"
                 id="select-image"
                 style={{ display: 'none' }}
-                onChange={e => setSelectedImage(e.target.files[0])}
+                {...register('campaignPicture', {
+                    onChange: (e => {
+                        setSelectedImage(e.target.files[0])
+                    })
+                })}
             />
             <label htmlFor="select-image">
                 <Button variant="text" component={'a'} className={'max-w-[150px] sm:max-w-[300px] lg:max-w-[500px]'}>
