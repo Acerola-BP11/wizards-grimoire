@@ -3,7 +3,6 @@
 import { ImageContext } from "@/app/context/ImageContext";
 import { Button } from "@mui/material";
 import { useContext } from "react";
-import { useFormContext } from "react-hook-form";
 
 export default function ImageInput( { register } ) {
 
@@ -23,7 +22,7 @@ export default function ImageInput( { register } ) {
                 })}
             />
             <label htmlFor="select-image">
-                <Button variant="text" component={'a'} className={'max-w-[150px] sm:max-w-[300px] lg:max-w-[500px]'}>
+                <Button variant="text" component={'a'} className={'max-w-[150px] sm:max-w-[300px] lg:max-w-[500px] min-w-[150px] sm:min-w-[200px] lg:min-w-[300px]'}>
                     <img src={imageUrl ? imageUrl : '/images/avatar.jpg'}/>
                 </Button>
             </label>

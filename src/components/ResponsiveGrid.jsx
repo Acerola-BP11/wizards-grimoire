@@ -5,9 +5,9 @@ export default function ResponsiveGrid({children, gridHeader, buttonText, button
         <div className="flex items-center justify-center bg-transparent w-full h-full overflow-auto">
             <div className="py-5 w-full h-full flex flex-col">
                 <Box className="flex flex-row justify-between">
-                    <h1 className="text-white font-bold text-2x1 mb-7 lg:mx-8">{gridHeader}</h1>
+                    <h1 className="text-white font-bold text-2x1 mb-7 mx-5 lg:mx-8">{gridHeader}</h1>
                     <Link href={buttonAction}>
-                        <Button className="mb-7 lg:mx-8 bg-custom-blue font-bold m" variant="contained">{buttonText}</Button>
+                        <Button className="mb-7 mx-5 lg:mx-8 bg-custom-blue font-bold" variant="contained">{buttonText}</Button>
                     </Link>
                 </Box>
                 <Grid

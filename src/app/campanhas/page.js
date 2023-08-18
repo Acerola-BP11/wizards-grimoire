@@ -1,4 +1,4 @@
-import Card from "@/components/Campaign/Card";
+import CampaignCard from "@/components/Campaign/Card";
 import ResponsiveGrid from "@/components/ResponsiveGrid";
 
 export default function Campaings() {
@@ -8,25 +8,25 @@ export default function Campaings() {
             buttonText={'Nova Campanha'}
             buttonAction={'/campanhas/novo'}
         >
-            <Card
+            <CampaignCard
                 campaignName={'Campanha1'}
                 init={"01/01/1999"}
                 agentsNumber={0}
                 dm={'Guilherme Henrique'}
             />
-            <Card
+            <CampaignCard
                 campaignName={'Campanha1'}
                 init={"01/01/1999"}
                 agentsNumber={0}
                 dm={'Guilherme Henrique'}
             />
-            <Card
+            <CampaignCard
                 campaignName={'Campanha1'}
                 init={"01/01/1999"}
                 agentsNumber={0}
                 dm={'Guilherme Henrique'}
             />
-            <Card
+            <CampaignCard
                 campaignName={'Campanha1'}
                 init={"01/01/1999"}
                 agentsNumber={0}

@@ -1,4 +1,3 @@
-'use client'
 import { ShareIcon } from "@heroicons/react/24/outline"
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Divider, Grid, IconButton, Typography } from "@mui/material"
 export default function CampaignCard({ ...props }) {
