@@ -17,6 +17,7 @@ export default function ResponsiveGrid({children, gridHeader, buttonText, button
                     columnSpacing={5}
                     justifyContent={"center"}
                     alignItems={"center"}
+                    paddingX={5}
                 >
                     {children}
                 </Grid>

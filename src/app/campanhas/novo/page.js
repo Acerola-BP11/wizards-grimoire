@@ -5,6 +5,8 @@ import ImageProvider from "@/app/context/ImageContext";
 import ImageInput from "@/components/ImageInput";
 import dynamic from "next/dynamic"
 import { Controller, useForm } from "react-hook-form";
+import axios from "axios";
+import { auth } from "@/utils/firebase";
 const CustomEditor = dynamic(() => import('@/components/CustomEditor'),
 {
     ssr: false
@@ -25,11 +27,20 @@ export const metadata = {
 
 export default function CreateCampaign(){
 
-    const { register, handleSubmit, control, methods } = useForm()
-    const onSubmit = (data) => {
-        console.log(data)
-    }
-    
+    const { register, handleSubmit, control } = useForm()
+    const onSubmit = async (data) => {
+        await axios.post('http://localhost:3500/campaign/new', {
+            campaignPicture: data.campaignPicture[0],
+            campaignName: data.campaignName,
+            campaignDescription: data.campaignDescription
+        },
+        {
+            headers: { 
+                "Content-Type": "multipart/form-data",
+                "Authorization": await auth.currentUser.getIdToken()
+            }
+        })
+}
     return(
         <div className="flex items-center justify-center mt-16">
                 <form onSubmit={handleSubmit(onSubmit)}>

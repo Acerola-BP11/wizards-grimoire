@@ -1,9 +1,13 @@
 import { ShareIcon } from "@heroicons/react/24/outline"
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Divider, Grid, IconButton, Typography } from "@mui/material"
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Divider, Grid, IconButton, Skeleton, Typography } from "@mui/material"
 export default function CampaignCard({ ...props }) {
     return (
-        <Grid item xs={12} md={6} lg={4} className="max-w-md">
-            <Card className="bg-custom-dark-blue" sx={{ borderRadius: '16px' }}>
+
+        <Grid item xs={12} md={6} lg={4}>
+            <Card className="bg-custom-dark-blue" sx={{ 
+                borderRadius: '16px',
+                maxWidth: 480
+                }}>
                 <Box className='relative'>
                     <IconButton aria-label="Compartilhar" className="absolute right-2 top-1/3 -translate-y-1/2">
                         <ShareIcon className="w-5 h-auto text-white"/>
@@ -47,9 +51,9 @@ export default function CampaignCard({ ...props }) {
                     sx={{ border: 1, borderRadius: '16px' }}
                     />
                 </Box>
-                <CardActionArea className="mt-1">
-                    <Divider component="div" role="presentation" className="bg-custom-blue"/>
-                    <CardActions className="justify-between my-4 mx-2">
+                <CardActionArea component='div'>
+                    <Divider role="presentation" className="bg-custom-blue"/>
+                    <CardActions className="justify-between mt-4 mb-2 mx-2">
                         <Button size={'small'} variant={"text"} className="text-red-600">
                             Excluir
                         </Button>
