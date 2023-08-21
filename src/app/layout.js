@@ -12,8 +12,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-[#111111]">
         <AuthProvider>
-          <Header/>
-          {children}
+          <div className='flex flex-col h-screen w-screen'>
+           <Header/>
+           {children}
+          </div>
         </AuthProvider>
       </body>
     </html>

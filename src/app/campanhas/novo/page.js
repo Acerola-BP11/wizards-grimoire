@@ -42,9 +42,9 @@ export default function CreateCampaign(){
         })
 }
     return(
-        <div className="flex items-center justify-center mt-16">
+        <div className="grow flex items-center justify-center overflow-auto">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Paper className="bg-black w-[90vw] mx-5 lg:w-[65vw] lg:mx-0 flex flex-col justify-between border-solid border-4 border-custom-blue">
+                    <Paper className="bg-black w-[90vw] mx-5 lg:w-[65vw] lg:mx-0 flex flex-col justify-between border-solid border-4 border-custom-blue mt-10">
                         <ThemeProvider theme={theme}>
                             <ImageProvider>
                                     <Box className='flex flex-row justify-between items-end h-full w-full'>
