@@ -13,18 +13,19 @@ export default function CustomShower({content}) {
       init={{
         menubar: false,
         content_style:
-          "body { font-family:Helvetica,Arial,sans-serif; font-size:14px}",
+          "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; overflow:auto}",
         promotion: false,
         toolbar: false,
         language: 'pt_BR',
         language_url: '/tinymce/languages/pt_BR.js',
         statusbar: false,
-        resize: false,
-        content_css: 'dark',
-        skin: 'oxide-dark',
-        placeholder: 'Insira aqui a descrição da campanha.',
+        content_css: 'custom-view-only',
+        skin: 'custom-view-only',
+        plugins: 'autoresize',
+        autoresize_bottom_margin: 0
       }}
       value={content}
+      disabled={true}
     />
   );
 }

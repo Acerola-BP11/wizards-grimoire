@@ -20,8 +20,8 @@ export default function CustomEditor({field}) {
         language_url: '/tinymce/languages/pt_BR.js',
         statusbar: false,
         resize: false,
-        content_css: 'dark',
-        skin: 'oxide-dark',
+        content_css: 'custom-user-input',
+        skin: 'custom-user-input',
         placeholder: 'Insira aqui a descrição da campanha.',
       }}
       {...newField}
