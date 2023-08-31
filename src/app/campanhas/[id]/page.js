@@ -2,11 +2,21 @@ import { Box, Button, Grid, SpeedDial, SpeedDialAction, SpeedDialIcon, Typograph
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import dynamic from "next/dynamic";
+import AgentSwiper from "@/components/Campaign/AgentSwiper";
+import AgentCard from "@/components/Agents/Card";
 const CustomShower = dynamic(() => import('@/components/customShower'), {
     ssr: false
 })
 
 export default function ViewCampaign(){
+
+    const menuItems = [
+        {
+            href: '/delete',
+            label: 'delete'
+        }
+    ]
+
     return (
         <Box className='h-full flex flex-col'>
             <div className="h-1/2 w-full">
@@ -31,9 +41,20 @@ export default function ViewCampaign(){
                 </div>
             </div>
             <div className="w-full h-1/2">
-                <Grid className="h-full w-full">
-
-                </Grid>
+                <AgentSwiper>
+                    <AgentCard
+                    agentName='Touro Ferdinando'
+                    delete={true}
+                    deleteText='Remover'
+                    items={menuItems}
+                    />
+                    <AgentCard
+                    agentName='Touro Ferdinando'
+                    delete={true}
+                    deleteText='Remover'
+                    items={menuItems}
+                    />
+                </AgentSwiper>
                 <SpeedDial
                     ariaLabel="Ações"
                     sx={{ position: 'absolute', bottom: 16, right: 16, color: 'blue'}}
