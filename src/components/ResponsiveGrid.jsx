@@ -13,11 +13,9 @@ export default function ResponsiveGrid({children, gridHeader, buttonText, button
                 <Grid
                     container
                     direction={"row"}
-                    rowSpacing={2}
-                    columnSpacing={5}
+                    spacing={5}
                     justifyContent={"center"}
                     alignItems={"center"}
-                    paddingX={5}
                 >
                     {children}
                 </Grid>

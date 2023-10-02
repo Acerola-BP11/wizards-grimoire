@@ -28,8 +28,6 @@ export default function AgentCard({ ...props }) {
             </MenuItem>
         )
     })
-
-    console.log(props.items)
     
 
     return (

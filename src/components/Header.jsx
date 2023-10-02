@@ -33,7 +33,7 @@ export default function Header() {
           <a href="/campanhas" className="text-lg font-semibold leading-6 text-anti-flash-white">
             Campanhas
           </a>
-          <a href="#" className="text-lg font-semibold leading-6 text-anti-flash-white">
+          <a href="/agentes" className="text-lg font-semibold leading-6 text-anti-flash-white">
             Agentes
           </a>
           <a href="#" className="text-lg font-semibold leading-6 text-anti-flash-white">
