@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## WizardsGrimoire
 
-First, run the development server:
+Primeira tentativa de site feita por mim sem ser para algum trabalho da faculdade, a ideia é ser um site para cadastro de campanhas de RPG de mesa, onde é possível criar personagens e registra-los em campanhas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+O Projeto no momento está em pausa devido ao fato de eu não ter gostado tanto do uso do firebase como solução de armazenagem de dados, e também devido ao fato do site pedir muito conteúdo a ser servido por padrão (todo o conteúdo do SRD de Dungeons&Dragons 5e).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Entretanto pretendo continuar esse projeto um dia, muito provavelmente mudando a stack dele para utilizar MariaDB ou Mongo. Entretanto a parte do React com Tailwind usada na estilização do frontend foi um imenso aprendizado que até hoje.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+####OBS: Feito para ser utilizado em conjunto com WizardsGrimoire-api
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Stack Utilizada
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Next.js
+React
+Tailwind
